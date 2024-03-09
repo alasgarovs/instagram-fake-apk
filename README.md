@@ -14,7 +14,7 @@ This is a fake instagram login app.
 
 1. Clone the repository.
 ```bash
-git clone https://github.com/your-username/instagram-login-app.git
+git clone https://github.com/alasgarovs/instagram-fake-apk.git
 ```
 
 2. Install the required dependencies.
