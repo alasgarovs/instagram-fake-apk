@@ -4,8 +4,9 @@ from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDRaisedButton
 from kivy.core.window import Window
 from kivy.utils import rgba
+import webbrowser
 
-# Window.size = (400, 680)
+Window.size = (400, 680)
 
 
 class InstagramApp(MDApp):
@@ -16,8 +17,9 @@ class InstagramApp(MDApp):
         if username.strip() == "" or password.strip() == "":
             self.show_error_dialog("Error", "Username or password cannot be empty!")
         else:
+            link = "https://instagram.com/"+str(username)
+            webbrowser.open(link)
             # print(username, password)
-            self.show_error_dialog("Login error", "Something went wrong, check your internet connection!")
 
     def show_error_dialog(self, title, message):
         dialog = MDDialog(
