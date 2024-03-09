@@ -5,7 +5,7 @@ from kivymd.uix.button import MDRaisedButton
 from kivy.core.window import Window
 from kivy.utils import rgba
 
-Window.size = (400, 680)
+# Window.size = (400, 680)
 
 
 class InstagramApp(MDApp):
