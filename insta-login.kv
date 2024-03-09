@@ -1,0 +1,122 @@
+MDScreen:
+    canvas.before:
+        Rectangle:
+            source: 'images/wall.jpg'
+            pos: self.pos
+            size: self.size
+    Image:
+        source:"images/insta.png"
+        pos_hint:{"center_x":0.5,"center_y":0.85}
+        size_hint: 0.15, 0.15
+
+    MDLabel:
+        id: error_label
+        size_hint:0.9, 0.07
+        text: ""
+        pos_hint: {"center_x": 0.55, "center_y": 0.76}
+        font_size: "14sp"
+        width: '100dp'
+        valign: "center"
+        theme_text_color: "Custom"
+        text_color: rgba('#8B0000')
+
+    MDFloatLayout:
+        size_hint:0.9, 0.07
+        pos_hint:{"center_x":0.5,"center_y":0.68}
+        canvas:
+            Color:
+                rgb:rgba('#C2E2D6')
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [4]
+        canvas.before:
+            Color:
+                rgb:rgba('#C2E2D6')
+            Line:
+                width:1.5
+                rounded_rectangle:self.x, self.y, self.width, self.height, 4,4,4,4, 100
+        TextInput:
+            id: username_field
+            hint_text:"Username, email or mobile number"
+            size_hint:1, None
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+            height:self.minimum_height
+            background_color:1,1,1,0
+            cursor_color:rgba('#5F5F5F')
+            hint_text_color: rgba('#5F5F5F')
+            font_size:"14sp"
+            padding: 13
+
+    MDFloatLayout:
+        size_hint:0.9, 0.07
+        pos_hint:{"center_x":0.5,"center_y":0.59}
+        canvas:
+            Color:
+                rgb:rgba('#C2E2D6')
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [4]
+        canvas.before:
+            Color:
+                rgb:rgba('#C2E2D6')
+            Line:
+                width:1.5
+                rounded_rectangle:self.x, self.y, self.width, self.height, 4,4,4,4, 100
+        TextInput:
+            id: password_field
+            hint_text:"Password"
+            size_hint:1, None
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+            height:self.minimum_height
+            background_color:1,1,1,0
+            cursor_color:rgba('#5F5F5F')
+            hint_text_color: rgba('#5F5F5F')
+            font_size:"14sp"
+            padding: 13
+            password:True
+
+    MDRoundFlatButton:
+        text:"Log in"
+        size_hint: 0.9, 0.07
+        pos_hint:{"center_x":0.5,"center_y":0.48}
+        font_size: "16sp"
+        md_bg_color: rgba('#004bff')
+        line_color: rgba('#004bff')
+        text_color: rgba('#ffffff')
+        on_release: app.on_login(username_field.text, password_field.text)
+
+    MDTextButton:
+        text:"Forgot password?"
+        font_size:"14sp"
+        pos_hint:{"center_x":0.5,"center_y":0.40}
+        theme_text_color: "Custom"
+        text_color: rgba('#ffffff')
+
+    MDRoundFlatButton:
+        text:"Create new account"
+        size_hint: 0.9, 0.07
+        pos_hint:{"center_x":0.5,"center_y":0.12}
+        font_size: "15sp"
+        line_color: rgba("#0085ff")
+        text_color: rgba("#0085ff")
+
+    MDFloatLayout:
+        size_hint: 0.9, 0.07
+        pos_hint: {"center_x": 0.5, "center_y": 0.05}
+        Image:
+            source: "images/meta.png"
+            pos_hint: {"center_x": 0.45, "center_y": 0.5}
+            size_hint: 0.40, 0.40
+            
+        MDLabel:
+            text: "Meta"
+            pos_hint: {"center_x": 0.85, "center_y": 0.5}
+            size_hint: 0.7, None
+            font_size: "14sp"
+            valign: "center"
+            theme_text_color: "Custom"
+            text_color: rgba('#ffffff')
+
+
