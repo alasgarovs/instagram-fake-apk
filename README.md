@@ -1,6 +1,6 @@
 # Instagram login app for android devices
 
-This simple application written by Kivy framework of Python language and KivyMD for logging into Instagram.
+This simple application written by Kivy framework of Python language and KivyMD for logging into instagram.
 This is a fake instagram login app.
 
 ![instagram](https://github.com/alasgarovs/instagram-fake-apk/assets/70092601/b4dac208-8cb9-417b-bf2a-893a1f289749)
