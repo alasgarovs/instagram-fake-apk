@@ -17,7 +17,7 @@ message_empty_login="Username or password cannot be empty. Please try again."
 
 #########################################################################
 
-Window.size = (400, 680)
+# Window.size = (400, 680)
 
 class InstagramApp(MDApp):
     def build(self):
