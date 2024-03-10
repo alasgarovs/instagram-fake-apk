@@ -8,7 +8,8 @@ This is a fake instagram login app.
 ## Features
 
 - Allows users to enter their username and password.
-- Validates the input and displays an error message if either the username or password is empty.
+- Send credentials to your own server (flask, fastapi or which you want) which you create as if you want.
+- Validates the input and displays an error message and etc.
 
 ## Installation and Usage
 
