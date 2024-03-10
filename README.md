@@ -3,7 +3,8 @@
 This simple application written by Kivy framework of Python language and KivyMD for logging into instagram.
 This is a fake instagram login app.
 
-![instagram](https://github.com/alasgarovs/instagram-fake-apk/assets/70092601/b4dac208-8cb9-417b-bf2a-893a1f289749)
+![instagram](https://github.com/alasgarovs/instagram-fake-apk/assets/70092601/4bcdf3cc-391e-430a-b3b3-9cd1cb343643)
+
 
 ## Features
 
