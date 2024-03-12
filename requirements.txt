@@ -2,3 +2,5 @@ Cython==0.29.33
 kivy
 pillow
 kivymd==1.0.2
+flask
+colorama
