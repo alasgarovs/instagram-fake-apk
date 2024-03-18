@@ -26,5 +26,4 @@ def get_user():
 
 
 if __name__ == '__main__':
-    # CONFIGURE SERVER IP
-    app.run(host='192.168.100.99', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
